@@ -71,7 +71,7 @@ TooltipProvider
 } from "@/components/ui/tooltip"
 import exp from "constants"
 
-export function dashboard() {
+export default function  dashboard() {
 return (<>
 <div>
 <main className="grid flex-1 items-start gap-4 p-4 sm:px-6 sm:py-0 md:gap-8">
@@ -137,4 +137,4 @@ return (<>
 </>
 )
 }
-export default dashboard
+// export default dashboard
