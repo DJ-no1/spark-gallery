@@ -11,7 +11,7 @@ import {
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 
-export default function signup() {
+export default function SignUpForm() {
   return (
     <div className=" py-20">
     <Card className="mx-auto max-w-sm">

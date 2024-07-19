@@ -12,7 +12,7 @@ import {
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 
-export default function signin() {
+export default function SignInForm() {
   return (
     <div className=" py-40 ">
     <Card className="mx-auto max-w-sm">
