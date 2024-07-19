@@ -22,7 +22,7 @@ const profile = () => {
             </Toggle>
           </Link>
         </TooltipTrigger>
-        <TooltipContent side="right">Settings</TooltipContent>
+        <TooltipContent side="right">Settings hello</TooltipContent>
       </Tooltip>
     </TooltipProvider>
   </nav></div>
