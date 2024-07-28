@@ -1,10 +1,10 @@
-
 "use client"
 
 import * as React from "react"
 import { MoonIcon, SunIcon } from "@radix-ui/react-icons"
 import { useTheme } from "next-themes"
 
+import { Button } from "@/components/ui/button"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -12,22 +12,10 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
-import { Popover, PopoverTrigger } from "@/components/ui/popover"
-import PopoverDemo from "@/components/PopoverDemo"
-export default function Home() {
+export function ModeToggle() {
   const { setTheme } = useTheme()
 
-  return (<>
-    <div>
-      <h1>Spark Gallery</h1>
-      <Link href={'/sign-up'}>
-      <Button variant={"default"} className=" flex justify-center px-4" >Click me</Button></Link>
-    </div>
-    <div>
-
-
+  return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="outline" size="icon">
@@ -48,17 +36,5 @@ export default function Home() {
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
-  
-
-
-    </div>
-    <div>
-    {/* <Popover>
-  <PopoverTrigger>Open</PopoverTrigger>
-  <PopoverContent>Place content for the popover here.</PopoverContent>
-</Popover> */}
-
- </div>
-    </>
-  );
+  )
 }

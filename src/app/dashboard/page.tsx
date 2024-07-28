@@ -1,4 +1,4 @@
-'use client'
+// 'use client'
 
 import Image from "next/image"
 import Link from "next/link"
@@ -70,8 +70,20 @@ TooltipTrigger,
 TooltipProvider
 } from "@/components/ui/tooltip"
 import exp from "constants"
+import { auth, currentUser } from "@clerk/nextjs/server"
 
-export default function  dashboard() {
+export default async function  dashboard() {
+//   const user = await currentUser();
+
+// const{userId} = auth();
+// // console.log(userId);
+// if (!userId || !user) {
+//   return <div>
+//     you are not login
+//   </div>}
+
+  // console.log(user);
+
 return (<>
 <div>
 <main className="grid flex-1 items-start gap-4 p-4 sm:px-6 sm:py-0 md:gap-8">
@@ -126,15 +138,49 @@ return (<>
       <CardHeader>
         <CardTitle>Websites</CardTitle>
         <CardDescription>
-        Find the spark you need to ignite your next project on these websites.         </CardDescription>
+        Find the spark you need to ignite your next project on these websites.         
+        </CardDescription>
+      </CardHeader>
+    </Card>
+  </TabsContent>
+  <TabsContent value="frontend">
+    <Card >
+      <CardHeader>
+        <CardTitle>Websites</CardTitle>
+        <CardDescription>
+        Find the spark you need to ignite your next project on these websites.         
+        </CardDescription>
+      </CardHeader>
+    </Card>
+  </TabsContent>
+  <TabsContent value="fullStack">
+    <Card >
+      <CardHeader>
+        <CardTitle>Websites</CardTitle>
+        <CardDescription>
+        Find the spark you need to ignite your next project on these websites.         
+        </CardDescription>
+      </CardHeader>
+    </Card>
+  </TabsContent>
+  <TabsContent value="backend">
+    <Card >
+      <CardHeader>
+        <CardTitle>Websites</CardTitle>
+        <CardDescription>
+        Find the spark you need to ignite your next project on these websites.         
+        </CardDescription>
       </CardHeader>
     </Card>
   </TabsContent>
 </Tabs>
 </main>
 </div>
+<div className=" justify-center text-center">
+  {/* {user.firstName} */}
+  
+</div>
 
 </>
 )
 }
-// export default dashboard

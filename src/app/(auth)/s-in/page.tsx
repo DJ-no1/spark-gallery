@@ -1,4 +1,6 @@
 'use client'
+
+
 import Link from "next/link"
 
 import { Button } from "@/components/ui/button"
@@ -16,8 +18,10 @@ export default function SignInForm() {
   return (
     <div className=" py-40 ">
     <Card className="mx-auto max-w-sm">
-      <CardHeader><Link href={"/dashboard"}>
-        <CardTitle className="text-2xl items-center">Login</CardTitle></Link>
+      <CardHeader>
+        <Link href={"/dashboard"}>
+        <CardTitle className="text-2xl items-center">Login</CardTitle>
+        </Link>
         <CardDescription>
           Enter your email below to login to your account
         </CardDescription>
@@ -54,7 +58,7 @@ export default function SignInForm() {
         </div>
         <div className="mt-4 text-center text-sm">
           Don&apos;t have an account?{" "}
-          <Link href="/signup" className="underline">
+          <Link href="/sign-up" className="underline">
             Sign up
           </Link>
         </div>

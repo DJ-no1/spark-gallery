@@ -24,7 +24,8 @@ Medal,
 ScrollText,
 AppWindowIcon,
 Settings2,
-Flame
+Flame,
+CircleUser
 } from "lucide-react"
 
 import { Badge } from "@/components/ui/badge"
@@ -79,7 +80,8 @@ TooltipTrigger,
 TooltipProvider
 } from "@/components/ui/tooltip"
 import exp from "constants"
-
+import ProfileButton from "@/components/ProfileButton";
+import { ModeToggle } from "@/components/Mode";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -125,20 +127,20 @@ export default function dashboard({
 <Tooltip>
   <TooltipTrigger asChild>
     <Link
-      href="#"
+      href="/dashboard/myWebsites"
       className="flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:h-8 md:w-8"    >
       <AppWindow className="h-5 w-5" />
       <span className="sr-only">My websites</span>
     </Link>
   </TooltipTrigger>
-  <TooltipContent side="right">My websites</TooltipContent>
+  <TooltipContent side="right">My Websites</TooltipContent>
 </Tooltip></TooltipProvider>
 
 <TooltipProvider>
 <Tooltip>
   <TooltipTrigger asChild>
     <Link
-      href="#"
+      href="/dashboard/leaderboard"
       className="flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:h-8 md:w-8"    >
       <Medal className="h-5 w-5" />
       <span className="sr-only">Leaderboard</span>
@@ -152,7 +154,7 @@ export default function dashboard({
 <Tooltip>
   <TooltipTrigger asChild>
     <Link
-      href="#"
+      href="/dashboard/documentation"
       className="flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:h-8 md:w-8"
     >
       <ScrollText className="h-5 w-5" />
@@ -168,7 +170,7 @@ export default function dashboard({
 <Tooltip>
   <TooltipTrigger asChild>
     <Link
-      href="/settings"
+      href="/dashboard/settings"
       className="flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:h-8 md:w-8"
     >
       <Settings className="h-5 w-5" />
@@ -200,35 +202,35 @@ export default function dashboard({
         <span className="sr-only">Acme Inc</span>
       </Link>
       <Link
-        href="#"
+        href="/dashboard"
         className="flex items-center gap-4 px-2.5 text-foreground"
       >
         <Home className="h-5 w-5" />
         Dashboard
       </Link>
       <Link
-        href="#"
+        href="/dashboard/myWebsites"
         className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground"
       >
         <AppWindowIcon className="h-5 w-5" />
-        My websites
+        My Websites
       </Link>
       <Link
-        href="#"
+        href="/dashboard/leaderboard"
         className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground"
       >
         <Medal className="h-5 w-5" />
         Leaderboard
       </Link>
       <Link
-        href="#"
+        href="/dashboard/documentation"
         className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground"
       >
         <ScrollText className="h-5 w-5" />
         Documentation
       </Link>
       <Link
-        href="/settings"
+        href="/dashboard/settings"
         className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground"
       >
         <Settings2 className="h-5 w-5" />
@@ -238,8 +240,8 @@ export default function dashboard({
   </SheetContent>
 </Sheet>
 
-<h1 className="text-2xl font-bold ">
-    THE SPARK GALLARY
+<h1 className="  font-bold flex md:text-2xl sm:text-2xl">
+    SPARK GALLARY
 </h1>
 
 {/* <Breadcrumb className="hidden md:flex">
@@ -269,33 +271,9 @@ export default function dashboard({
     className="w-full rounded-lg bg-background pl-8 md:w-[200px] lg:w-[320px]"
   />
 </div>
-<DropdownMenu>
-  <DropdownMenuTrigger asChild>
-    <Button
-      variant="outline"
-      size="icon"
-      className="overflow-hidden rounded-full"
-    >
-      <Image
-        src="/placeholder-user.jpg"
-        width={36}
-        height={36}
-        alt="Avatar"
-        className="overflow-hidden rounded-full"
-      />
-    </Button>
-  </DropdownMenuTrigger>
-  <DropdownMenuContent align="end">
-    <DropdownMenuLabel>My Account</DropdownMenuLabel>
-    <DropdownMenuSeparator />
-    <DropdownMenuItem>Settings</DropdownMenuItem>
-    <DropdownMenuItem>Support</DropdownMenuItem>
-    <DropdownMenuSeparator />
-    <DropdownMenuItem>Logout</DropdownMenuItem>
-  </DropdownMenuContent>
-</DropdownMenu>
+<ProfileButton />
+<ModeToggle />
 </header>
-
 
 {children}
 </div>
