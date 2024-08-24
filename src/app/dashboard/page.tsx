@@ -71,6 +71,7 @@ TooltipProvider
 } from "@/components/ui/tooltip"
 import exp from "constants"
 import { auth, currentUser } from "@clerk/nextjs/server"
+import UploadButton from "@/components/Upload"
 
 export default async function  dashboard() {
 //   const user = await currentUser();
@@ -125,12 +126,7 @@ return (<>
           Export
         </span>
       </Button> */}
-      <Button size="sm" className="h-7 gap-1">
-        <PlusCircle className="h-3.5 w-3.5" />
-        <span className="sr-only sm:not-sr-only sm:whitespace-nowrap">
-          Add Website
-        </span>
-      </Button>
+      <UploadButton />
     </div>
   </div>
   <TabsContent value="all">
